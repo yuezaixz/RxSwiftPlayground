@@ -8,6 +8,9 @@ target 'RxSwiftPlayground' do
   # Pods for RxSwiftPlayground
   pod "RxSwift"
   pod "RxCocoa"
+  pod "Moya"
+  pod "SnapKit"
+  pod 'SwiftyJSON'
 
 end
 
