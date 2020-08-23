@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<playground version='6.0' target-platform='ios' display-mode='raw'>
+    <pages>
+        <page name='目录'/>
+        <page name='创建和订阅 Observables'/>
+        <page name='Subjects'/>
+        <page name='联接操作-Combining'/>
+        <page name='转变操作-Transforming'/>
+        <page name='集合运算操作'/>
+        <page name='可连接的操作'/>
+        <page name='错误处理'/>
+        <page name='调试'/>
+    </pages>
+</playground>
