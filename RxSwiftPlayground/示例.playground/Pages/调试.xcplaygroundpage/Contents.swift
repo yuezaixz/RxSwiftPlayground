@@ -71,6 +71,35 @@ example("RxSwift.Resources.total") {
     
 print(RxSwift.Resources.total)
 #endif
-//: > `RxSwift.Resources.total` is not enabled by default, and should generally not be enabled in Release builds. [Click here](Enable_RxSwift.Resources.total) for instructions on how to enable it.
+/*:
+ ----> `RxSwift.Resources.total` 在默认情况下不启用,通常不会启用发布构建。下面是展示如何启用它：
+
+//: CocoaPods
+
+1. 添加post_install脚本到Podfile文件，比如.:
+
+```
+ 
+target 'AppTarget' do
+pod 'RxSwift'
+end
+post_install do |installer|
+    installer.pods_project.targets.each do |target|
+        if target.name == 'RxSwift'
+            target.build_configurations.each do |config|
+                if config.name == 'Debug'
+                    config.build_settings['OTHER_SWIFT_FLAGS'] ||= ['-D', 'TRACE_RESOURCES']
+                end
+            end
+        end
+    end
+end
+ 
+```
+ 
+2. 运行 pod update.
+3. 编译.
+ 
+*/
 
 //: [Next](@next)

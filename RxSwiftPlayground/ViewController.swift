@@ -15,8 +15,6 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         
-        
-        RxSwift.Resource
     }
 
 
