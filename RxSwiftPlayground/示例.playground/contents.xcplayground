@@ -6,6 +6,7 @@
         <page name='Subjects'/>
         <page name='联接操作-Combining'/>
         <page name='转换操作-Transforming'/>
+        <page name='过滤和条件操作'/>
         <page name='集合运算操作'/>
         <page name='可连接的操作'/>
         <page name='错误处理'/>
