@@ -52,9 +52,17 @@ class CombineLatestSampleViewController: UIViewController {
         ).map(SignupDTO.init)
         
         let signupEvents = signupButton.rx.tap.withLatestFrom(signupDTOs)
-        signupEvents.subscribe(onNext: { item in
-            print("输入的邮箱是:\(item.email)")
-            print("输入的邮箱是:\(item.pwd)")
+        signupEvents.flatMapLatest { signupDTO -> Observable<String> in
+            
+            print("输入的邮箱是:\(signupDTO.email)")
+            print("输入的邮箱是:\(signupDTO.pwd)")
+            return Observable.create { observer -> Disposable in
+                observer.on(.next("解析后的结果"))
+                observer.on(.completed)
+                return Disposables.create()
+            }
+        }.subscribe(onNext: { item in
+            print("返回结果是:\(item)")
         }).disposed(by: disposeBag)
     }
 }
