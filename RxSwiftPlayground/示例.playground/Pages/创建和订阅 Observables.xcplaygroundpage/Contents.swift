@@ -7,7 +7,8 @@ import RxSwift
  # 创建和订阅 `Observable`s
  这里有以下几种方法来创建和订阅Observable序列
  ## never
- 创建一个不会终止和不会发出任何事件的序列 [了解更多](http://reactivex.io/documentation/operators/empty-never-throw.html)
+ 创建一个不会终止和不会发出任何事件的序列
+ [了解更多](http://reactivex.io/documentation/operators/empty-never-throw.html)
  */
 example("never") {
     let disposeBag = DisposeBag()
@@ -20,6 +21,7 @@ example("never") {
     
     neverSequenceSubscription.disposed(by: disposeBag)
 }
+
 /*:
  ----
  ## 创建一个空的Observable序列，这个序列仅仅只发出一个 Completed 事件。 [More info](http://reactivex.io/documentation/operators/empty-never-throw.html)
@@ -33,6 +35,35 @@ example("empty") {
         }
         .disposed(by: disposeBag)
 }
+
+/*:
+ ----
+ ## 用于中断事件流
+ */
+
+example("Never实际用途") {
+    let disposeBag = DisposeBag()
+    
+    Observable
+        .from([1, 2, 3, 4, 5])
+        .flatMap { (item) -> Observable<Int> in
+            if item > 2 {
+                return Observable.never()
+//                next(1)
+//                next(2)
+//                return Observable.empty()
+//                next(1)
+//                next(2)
+//                completed
+            } else {
+                return Observable.just(item)
+            }
+        }
+        .subscribe { item in
+            print(item)
+        }.disposed(by: disposeBag)
+}
+
 /*:
  ----
  ## just
@@ -92,6 +123,7 @@ example("create") {
     
     let myJust = { (element: String) -> Observable<String> in
         return Observable.create { observer in
+            // 这里还可以请求网络，加载文件，持久化数据等异步操作
             observer.on(.next(element))
             observer.on(.completed)
             return Disposables.create()
