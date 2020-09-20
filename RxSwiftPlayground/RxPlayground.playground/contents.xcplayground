@@ -4,6 +4,7 @@
         <page name='Table_of_Contents'/>
         <page name='1-Functional Thinking'/>
         <page name='2-Observable'/>
+        <page name='3-例子-倒计时请求'/>
         <page name='网络请求'/>
         <page name='CombinLatest'/>
         <page name='ViewModel'/>

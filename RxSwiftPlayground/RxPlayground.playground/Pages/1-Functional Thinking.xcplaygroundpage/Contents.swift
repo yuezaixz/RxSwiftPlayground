@@ -127,7 +127,7 @@ fileprivate extension Reactive where Base: UIScrollView {
 }
 
 /*:
- 
+ # 使用RxSwift的理由1：
  # 总结一下RxSwift函数编程的好处
  - 通过抽象来更好的描述问题
  
