@@ -7,9 +7,7 @@
 ![](http://image.runmaf.com/2020-10-14-16005924355829.jpg)
 
 <p align="left" >
-  <video controls="controls" autoplay="autoplay" width="33%" hight="33%">
-	  <source src="./Resources/RPReplay_Final1600610746.MP4" type="video/mp4"/>
-	</video>
+  <img src="./Resources/preview_2.gif" alt="preview" title="preview" width = "320">
 </p>
 
 ## 快门点击事件
