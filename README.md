@@ -8,7 +8,7 @@
 
 <p align="left" >
   <video controls="controls" autoplay="autoplay">
-	  <source src="Resources/RPReplay_Final1600610746.MP4"/>
+	  <source src="./Resources/RPReplay_Final1600610746.MP4"/>
 	</video>
 </p>
 
