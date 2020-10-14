@@ -8,7 +8,7 @@
  
  An Observable is an entity that wraps a value and allows to observe the value for changes
  
- Observable就是能够包装一个value的实体，那这个包装什么作用呢？它提供我们订阅这个value更新的机制。也就是一个Push-Driven时间模型。
+ Observable就是能够包装一个value的实体，那这个包装什么作用呢？它提供我们订阅这个value更新的机制。也就是一个Push-Driven事件模型。
  
  ## 核心
  
@@ -80,7 +80,7 @@ a.onNext(5)
  ## 操作符：来点好玩的
  
  - filter
- - bind
+ - map
  
  */
 
