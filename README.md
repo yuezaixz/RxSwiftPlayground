@@ -1,4 +1,13 @@
-# RxSwift实例
+# RxSwift
+
+## RxSwift的函数式编程
+
+打开工程 RxPlayground.playground - 1-Functional Thinking
+
+
+## 什么是Observable
+
+打开工程 RxPlayground.playground - 2-Observable
 
 ## 一个简单的需求
 
