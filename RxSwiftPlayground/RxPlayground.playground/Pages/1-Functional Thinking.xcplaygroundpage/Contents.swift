@@ -76,7 +76,7 @@ class MTVideoManagerRefactor {
     
 }
 
-//: 当然，这样可读性很差。可以扩展Optional来优化下
+//: 当然，这样可读性很差。可以扩展Optional添加一个标准化的方法来优化下
 
 extension Optional {
     func checkUnwrap<R>(_ bizFunction: (Wrapped) -> R) -> R? {
@@ -99,10 +99,10 @@ class MTVideoManagerFinish {
 
 MTVideoManagerFinish().startVideoPlayChain(videoUrl: "1")
 
-//: 我们这里做的主要的事情就是，提供一个标准化的方法，来实现从接受OptionalValue到只接受非Optional Value的转换。
+//: 我们这里做的主要的事情就是，提供一个标准化的方法，来实现从接受OptionalValue到只接受非Optional Value的转换这个有共用性的函数。
 //: 从而将注意力集中在核心的业务逻辑处理上，而不是OptionalValue的校验上
 
-//: RxSwift一个很大的帮助，也就是让我们将注意力集中在业务逻辑上。举个例子
+//: RxSwift（RxCocoa及自定义、第三方实现的扩展）一个很大的帮助，也就是让我们将注意力集中在业务逻辑上。举个例子
 
 import RxSwift
 import RxCocoa
@@ -111,6 +111,12 @@ let disposeBag = DisposeBag()
 let pageControl = UIPageControl()
 let mainScrollView = UIScrollView()
 
+//: RxCocoa的实现
+mainScrollView.rx.contentOffset.subscribe(onNext: { point in
+    print("scroll x:\(point.x) y:\(point.y)")
+}).disposed(by: disposeBag)
+
+//: 自定义的实现
 mainScrollView.rx.currentPage
     .subscribe(onNext: {
         pageControl.currentPage = $0

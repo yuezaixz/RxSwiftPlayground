@@ -34,7 +34,7 @@ public class Observable<Element>: NSObject {
         self.value = value
     }
     
-    func subscribeNext(_ subscriberFunc : @escaping (Element) -> Void) -> SignalToken {
+    func subscribeNext(_ subscriberFunc : @escaping Subscriber) -> SignalToken {
         currentSignalToken += 1
         subscriber[currentSignalToken] = subscriberFunc
         return currentSignalToken
