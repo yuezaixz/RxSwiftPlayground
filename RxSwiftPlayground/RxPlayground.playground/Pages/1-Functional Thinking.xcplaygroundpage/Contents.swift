@@ -39,7 +39,7 @@ class MTVideoManager {
  真正的代码就一行统计上报，其他代码全部都在异常处理。
  如果这时候又要添加一个上报的参数呢？又要添加一堆异常处理。
  
- 最近刚写的一段代码 [Code](http://techgit.meitu.com/iMeituPic/mtxx/-/blob/feature/dense_hair_wdw/MTXX/Classes/ViewController/MTXXCosmesis/DenseHair/MTDenseHairProcessor.swift#L107)
+ 最近刚写的一段代码 [Code](http://techgit.meitu.com/iMeituPic/mtxx/-/blob/feature/puzzle_report_wdw/MTXX/Classes/ViewController/MTXXCosmesis/DenseHair/MTDenseHairProcessor.swift#L178)
  
  
  */
