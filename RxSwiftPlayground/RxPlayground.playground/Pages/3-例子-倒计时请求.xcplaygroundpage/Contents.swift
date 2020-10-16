@@ -37,7 +37,8 @@ loadButton.rx
     .flatMap(start5SecondTimer)
     .filter{ $0 <= 0 }
     .map { _ in () }
-    .flatMap(requestData).bind(to: resultLabel.rx.text)
+    .flatMap(requestData)
+    .bind(to: resultLabel.rx.text)
 
 func start5SecondTimer() -> Observable<Int> {
     let timerSignal = BehaviorRelay<Int>(value: 5)
